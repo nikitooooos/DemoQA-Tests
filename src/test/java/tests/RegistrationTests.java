@@ -1,6 +1,8 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -11,6 +13,8 @@ public class RegistrationTests extends TestBase {
     Faker faker = new Faker();
     TestData testData = new TestData();
     @Test
+    @Tag("remote")
+    @DisplayName("Проверка регистрации")
     void successfulRegistrationTest() {
         String firstName = faker.name().firstName(),
                 lastName = faker.name().lastName(),

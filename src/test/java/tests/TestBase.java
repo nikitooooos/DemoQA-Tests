@@ -10,6 +10,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.RegistrationPage;
 
+import static com.codeborne.selenide.Selenide.closeWebDriver;
+
 public class TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
@@ -35,5 +37,7 @@ public class TestBase {
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
+
+        closeWebDriver();
     }
 }
