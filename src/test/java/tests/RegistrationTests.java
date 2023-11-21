@@ -2,17 +2,21 @@ package tests;
 
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
 import static io.qameta.allure.Allure.step;
 import static tests.TestData.*;
 import static utils.RandomUtils.*;
+
 public class RegistrationTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
     Faker faker = new Faker();
     TestData testData = new TestData();
+
+    @Tag("simple")
     @Test
     @DisplayName("Проверка регистрации")
     void successfulRegistrationTest() {
