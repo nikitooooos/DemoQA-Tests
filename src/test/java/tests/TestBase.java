@@ -25,6 +25,9 @@ public class TestBase {
         Configuration.browser = config.getBrowserName();
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
+        Configuration.browserVersion = config.getBrowserVersion();
+        Configuration.remote = config.getRemoteUrl();
+
 
         if (config.isRemote()) {
             Configuration.browserVersion = config.getBrowserVersion();
@@ -48,9 +51,7 @@ public class TestBase {
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
-        if (!Configuration.browser.equalsIgnoreCase("firefox")) {
-            Attach.browserConsoleLogs();
-        }
+        Attach.browserConsoleLogs();
         Attach.addVideo();
         closeWebDriver();
     }

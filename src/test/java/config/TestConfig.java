@@ -13,7 +13,7 @@ public interface TestConfig extends Config{
     String getBrowserName();
 
     @Key("baseUrl")
-    @DefaultValue("https://animego.org/")
+    @DefaultValue("https://demoqa.com")
     String getBaseUrl();
 
     @Key("browserVersion")
